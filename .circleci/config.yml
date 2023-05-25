@@ -9,6 +9,7 @@ jobs:
           name: npm install dependencies
           command: |
             npm install --save
+            npm update --save
 
   build_docker_image:
     docker:
