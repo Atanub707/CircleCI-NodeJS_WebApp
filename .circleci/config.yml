@@ -10,24 +10,24 @@ jobs:
           command: |
             npm install --save
 
-  build_docker_image:
-    docker:
-      - image: circleci/node.12
-    steps: 
-      - checkout
-      - setup_remote_docker:
-          docker_layer_caching: false
-      - run:
-          name: Build Docker Image
-          command: |
-            docker build -t nodejsatanuapp1 -t atanu/nodejsatanuapp1:latest .
-            echo $DOCKER_PASSWORD | docker login -u atanubiswas --password-xzy
-            docker push atanubiswas/nodejsatanuapp1:latest
+#   build_docker_image:
+#     docker:
+#       - image: circleci/node.12
+#     steps: 
+#       - checkout
+#       - setup_remote_docker:
+#           docker_layer_caching: false
+#       - run:
+#           name: Build Docker Image
+#           command: |
+#             docker build -t nodejsatanuapp1 -t atanu/nodejsatanuapp1:latest .
+#             echo $DOCKER_PASSWORD | docker login -u atanubiswas --password-xzy
+#             docker push atanubiswas/nodejsatanuapp1:latest
 
-workflows:
-  build_test:
-    jobs:
-      - build_test
-      - build_docker_image
+# workflows:
+#   build_test:
+#     jobs:
+#       - build_test
+#       - build_docker_image
 
 ### test1
