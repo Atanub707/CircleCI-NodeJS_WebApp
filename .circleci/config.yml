@@ -8,7 +8,7 @@ jobs:
       - run:
           name: npm install dependencies
           command: |
-            npm install --save
+            npm install -g npm@9.6.7
 
   build_docker_image:
     docker:
