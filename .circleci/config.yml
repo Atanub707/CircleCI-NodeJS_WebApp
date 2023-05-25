@@ -4,11 +4,11 @@ jobs:
     docker:
       - image: circleci/node.12
     steps:
-    - checkout
-    - run:
-        name: npm install dependencies
-        command: |
-          npm install --save
+      - checkout
+      - run:
+          name: npm install dependencies
+          command: |
+            npm install --save
 
   build_docker_image:
     docker:
