@@ -21,7 +21,7 @@ jobs:
           name: Build Docker Image
           command: |
             docker build -t nodejsatanuapp1 -t atanu/nodejsatanuapp1:latest .
-            echo $DOCKER_PASSWORD | docker login -u atanubiswas --password-Atanu@1806
+            echo $DOCKER_PASSWORD | docker login -u atanubiswas --password-stdin
             docker push atanubiswas/nodejsatanuapp1:latest
 
 workflows:
