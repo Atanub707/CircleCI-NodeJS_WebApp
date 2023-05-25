@@ -5,6 +5,9 @@ jobs:
       - image: circleci/node
     steps:
       - checkout
+      - run :
+          name: Update npm
+          command: npm install -g npm@9.6.7
       - run:
           name: npm install dependencies
           command: |
